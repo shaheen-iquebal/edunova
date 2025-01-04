@@ -1,0 +1,7 @@
+[
+    { "id": 1, "name": "Shaheen Iquebal", "email": "shaheen@gmail.com","username": "shaheen", "grade": "10","password":"abc", "userType":"student" },
+    { "id": 2, "name": "Newton Sheikh", "email": "123@123.com","username": "newton", "grade": "12", "password": "abc", "userType":"teacher" },
+    { "id": 3, "name": "John Doe", "email": "john@gmail.com","username": "john", "grade": "11","password":"abc", "userType":"student" },
+    { "id": 3, "name": "Jane Doe", "email": "jane@gmail.com","username": "jane", "grade": "","password":"abc", "userType":"principal" }
+]
+  

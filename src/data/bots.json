@@ -1,0 +1,93 @@
+[
+    {
+      "title": "Physics",
+      "description": "Learn concepts and solve physics problems tailored to your grade level.",
+      "imageLink": "/physics-bot.jpg",
+      "link": "https://example.com/bots/physics",
+      "grades": [8, 9, 10, 11, 12],
+      "isActive": true,
+      "subject": "physics",
+      "createdBy": "Admin"
+    },
+    {
+      "title": "Mathematics",
+      "description": "Solve math problems and explore topics like algebra, geometry, and calculus.",
+      "imageLink": "maths-bot.jpg",
+      "link": "https://example.com/bots/math",
+      "grades": [6, 7, 8, 9, 10, 11, 12],
+      "isActive": true,
+      "subject": "mathematics",
+      "createdBy": "Admin"
+    },
+    {
+      "title": "History",
+      "description": "Dive into historical events and timelines from ancient to modern times.",
+      "imageLink": "/history-bot.jpg",
+      "link": "https://example.com/bots/history",
+      "grades": [ 7, 8, 9, 10],
+      "isActive": true,
+      "subject": "history",
+      "createdBy": "Admin"
+    },
+    {
+      "title": "Biology",
+      "description": "Explore topics like human anatomy, genetics, and ecosystems.",
+      "imageLink": "/biology-bot.jpg",
+      "link": "https://example.com/bots/biology",
+      "grades": [9, 10, 11, 12],
+      "isActive": true,
+      "subject": "biology",
+      "createdBy": "Admin"
+    },
+    {
+      "title": "Chemistry",
+      "description": "Learn chemical reactions, the periodic table, and other chemistry fundamentals.",
+      "imageLink": "/chemistry-bot.jpg",
+      "link": "https://example.com/bots/chemistry",
+      "grades": [9, 10, 11, 12],
+      "isActive": true,
+      "subject": "chemistry",
+      "createdBy": "Admin"
+    },
+    {
+      "title": "Geography",
+      "description": "Discover physical and human geography, maps, and global cultures.",
+      "imageLink": "/geography-bot.jpg",
+      "link": "https://example.com/bots/geography",
+      "grades": [6, 7, 8, 9, 10],
+      "isActive": true,
+      "subject": "geography",
+      "createdBy": "Admin"
+    },
+    {
+      "title": "Computer Science",
+      "description": "Learn programming, algorithms, and basics of computer systems.",
+      "imageLink": "/cs-bot.jpg",
+      "link": "https://example.com/bots/computer-science",
+      "grades": [8, 9, 10, 11, 12],
+      "isActive": true,
+      "subject": "cs",
+      "createdBy": "Admin"
+    },
+    {
+      "title": "English",
+      "description": "Analyze literary works and improve your understanding of prose and poetry.",
+      "imageLink": "/literature-bot.jpg",
+      "link": "https://example.com/bots/literature",
+      "grades": [6, 7, 8, 9, 11, 12],
+      "isActive": true,
+      "subject": "english",
+      "createdBy": "Admin"
+    },
+    {
+      "title": "Economics",
+      "description": "Learn about microeconomics, macroeconomics, and financial systems.",
+      "imageLink": "/economics-bot.webp",
+      "link": "https://example.com/bots/economics",
+      "grades": [11, 12],
+      "isActive": true,
+      "subject": "economics",
+      "createdBy": "Admin"
+    }
+  ]
+  

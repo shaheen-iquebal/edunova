@@ -1,0 +1,205 @@
+{
+    "students": [
+      {
+        "studentId": "1",
+        "studentProfile": {
+          "basicInfo": {
+            "fullName": "John Doe",
+            "rollNumber": "2023012345",
+            "dateOfBirth": "2007-05-15",
+            "gender": "Male",
+            "class": "10",
+            "section": "A",
+            "admissionDate": "2020-06-15"
+          },
+          "contactInfo": {
+            "address": "123 Elm Street, Springfield",
+            "phoneNumber": "+1-555-1234",
+            "email": "john.doe@example.com",
+            "emergencyContact": {
+              "name": "Jane Doe",
+              "relationship": "Mother",
+              "phoneNumber": "+1-555-5678"
+            }
+          },
+          "academicInfo": {
+            "currentClass": "10",
+            "subjectsEnrolled": ["Mathematics", "Science", "English", "History", "Physical Education"],
+            "previousAcademicYear": {
+              "grade": "A",
+              "percentage": 89.5,
+              "classTeacher": "Mr. Smith"
+            },
+            "attendanceRecord": {
+              "totalDaysPresent": 180,
+              "attendancePercentage": 95
+            },
+            "examResults": [
+              {
+                "term": "Mid-Term",
+                "marks": {
+                  "Mathematics": 85,
+                  "Science": 90,
+                  "English": 88,
+                  "History": 80,
+                  "Physical Education": 95
+                }
+              },
+              {
+                "term": "Final-Term",
+                "marks": {
+                  "Mathematics": 90,
+                  "Science": 92,
+                  "English": 91,
+                  "History": 85,
+                  "Physical Education": 96
+                }
+              }
+            ]
+          },
+          "feesInfo": {
+            "feeStatus": "Paid",
+            "lastPaymentDate": "2024-03-01",
+            "outstandingDues": 0,
+            "feeBreakdown": {
+              "tuition": 5000,
+              "sports": 200,
+              "otherFees": 300
+            }
+          },
+          "extracurricularActivities": {
+            "sports": ["Basketball"],
+            "clubs": ["Drama Club", "Science Club"],
+            "achievements": ["Won Inter-School Basketball Championship 2023"]
+          },
+          "behavioralRecords": {
+            "teacherFeedback": "John is a hardworking and disciplined student.",
+            "disciplineReports": null,
+            "awardsAndRecognition": ["Best Student Award 2023"]
+          },
+          "miscellaneous": {
+            "profilePicture": "https://example.com/images/john_doe.jpg",
+            "libraryRecord": {
+              "booksBorrowed": ["The Great Gatsby", "To Kill a Mockingbird"],
+              "overdueBooks": []
+            },
+            "transportationDetails": {
+              "busRoute": "Route 12",
+              "driverName": "Mike Johnson",
+              "contactNumber": "+1-555-6789"
+            },
+            "medicalHistory": {
+              "allergies": ["Peanuts"],
+              "specialNeeds": null
+            }
+          },
+          "settings": {
+            "passwordReset": true,
+            "updateContactInfo": true,
+            "updateProfilePicture": true
+          }
+        }
+      },
+      {
+        "studentId": "3",
+        "studentProfile": {
+          "basicInfo": {
+            "fullName": "Jane Smith",
+            "rollNumber": "2023012346",
+            "dateOfBirth": "2008-08-22",
+            "gender": "Female",
+            "class": "9",
+            "section": "B",
+            "admissionDate": "2021-08-01"
+          },
+          "contactInfo": {
+            "address": "456 Oak Avenue, Springfield",
+            "phoneNumber": "+1-555-2345",
+            "email": "jane.smith@example.com",
+            "emergencyContact": {
+              "name": "Mark Smith",
+              "relationship": "Father",
+              "phoneNumber": "+1-555-6789"
+            }
+          },
+          "academicInfo": {
+            "currentClass": "9",
+            "subjectsEnrolled": ["Mathematics", "Science", "English", "Geography", "Art"],
+            "previousAcademicYear": {
+              "grade": "B",
+              "percentage": 75.4,
+              "classTeacher": "Ms. Green"
+            },
+            "attendanceRecord": {
+              "totalDaysPresent": 170,
+              "attendancePercentage": 90
+            },
+            "examResults": [
+              {
+                "term": "Mid-Term",
+                "marks": {
+                  "Mathematics": 78,
+                  "Science": 82,
+                  "English": 76,
+                  "Geography": 74,
+                  "Art": 90
+                }
+              },
+              {
+                "term": "Final-Term",
+                "marks": {
+                  "Mathematics": 80,
+                  "Science": 85,
+                  "English": 79,
+                  "Geography": 80,
+                  "Art": 92
+                }
+              }
+            ]
+          },
+          "feesInfo": {
+            "feeStatus": "Unpaid",
+            "lastPaymentDate": "2023-11-15",
+            "outstandingDues": 1500,
+            "feeBreakdown": {
+              "tuition": 4000,
+              "sports": 150,
+              "otherFees": 200
+            }
+          },
+          "extracurricularActivities": {
+            "sports": ["Soccer"],
+            "clubs": ["Art Club", "Music Club"],
+            "achievements": ["Gold Medal in School Art Competition"]
+          },
+          "behavioralRecords": {
+            "teacherFeedback": "Jane is a creative and artistic student.",
+            "disciplineReports": null,
+            "awardsAndRecognition": ["Gold Medal in Art Competition 2023"]
+          },
+          "miscellaneous": {
+            "profilePicture": "https://example.com/images/jane_smith.jpg",
+            "libraryRecord": {
+              "booksBorrowed": ["The Hobbit", "Pride and Prejudice"],
+              "overdueBooks": []
+            },
+            "transportationDetails": {
+              "busRoute": "Route 8",
+              "driverName": "Tom Williams",
+              "contactNumber": "+1-555-7890"
+            },
+            "medicalHistory": {
+              "allergies": ["None"],
+              "specialNeeds": null
+            }
+          },
+          "settings": {
+            "passwordReset": true,
+            "updateContactInfo": true,
+            "updateProfilePicture": true
+          }
+        }
+      }
+    ]
+  }
+  
