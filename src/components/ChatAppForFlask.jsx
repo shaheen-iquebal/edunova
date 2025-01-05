@@ -49,57 +49,17 @@ function ChatAppForFlask({ home }) {
   const fetchBotResponse = async (userText) => {
     setLoading(true);
     setError(null);
-
-    // Retrieve user data from cookies
-    const userData = Cookies.get("userData");
-    let userDetails = {};
-
-    try {
-      if (userData) {
-        userDetails = JSON.parse(userData);
-      }
-    } catch (error) {
-      console.error("Error parsing user data:", error);
-    }
-
-    // Prepare the payload
-    const payload = {
-      question: userText,
-      // Final payload structure for reference
-      // {
-      //   question: string,
-      //   user: {
-      //     name: string,
-      //     email: string,
-      //     username: string,
-      //     grade: string,
-      //     userType: string
-      //   },
-      //   subject: string
-      // }
-      user: {
-        // name: userDetails.name || "",
-        email: userDetails.email || "",
-        username: userDetails.username || "",
-        grade: userDetails.grade || "",
-        userType: userDetails.userType || "",
-      },
-      subject: activeSubject, // Using the currently selected bot's title/subject
-    };
-
-    console.log(payload);
-
     try {
       const response = await axios.post(
-        "http://127.0.0.1:4996/ask_question",
-        payload,
+        "https://flask-hello-de597930da7a.herokuapp.com/ask_question",
+        { question: userText },
         {
           headers: {
             "Content-Type": "application/json",
           },
         }
       );
-
+      console.log(response.data);
       // Directly use the answer as plain text
       return response.data.answer;
     } catch (error) {
@@ -123,7 +83,6 @@ function ChatAppForFlask({ home }) {
         minute: "2-digit",
       }),
     };
-
     setMessages((prevMessages) => [...prevMessages, userMessage]);
 
     const botResponseText = await fetchBotResponse(inputMessage);
