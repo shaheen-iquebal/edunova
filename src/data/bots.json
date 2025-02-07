@@ -1,4 +1,15 @@
 [
+  {
+      "title": "English",
+      "description": "Analyze literary works and improve your understanding of prose and poetry.",
+      "imageLink": "/literature-bot.jpg",
+      "link": "https://example.com/bots/literature",
+      "grades": [6, 7, 8, 9, 11, 12],
+      "isActive": true,
+      "subject": "english",
+      "createdBy": "Admin",
+      "status": "online"
+    },
     {
       "title": "Physics",
       "description": "Learn concepts and solve physics problems tailored to your grade level.",
@@ -7,7 +18,8 @@
       "grades": [8, 9, 10, 11, 12],
       "isActive": true,
       "subject": "physics",
-      "createdBy": "Admin"
+      "createdBy": "Admin",
+      "status": "under development"
     },
     {
       "title": "Mathematics",
@@ -17,7 +29,8 @@
       "grades": [6, 7, 8, 9, 10, 11, 12],
       "isActive": true,
       "subject": "mathematics",
-      "createdBy": "Admin"
+      "createdBy": "Admin",
+      "status": "under development"
     },
     {
       "title": "History",
@@ -27,7 +40,8 @@
       "grades": [ 7, 8, 9, 10],
       "isActive": true,
       "subject": "history",
-      "createdBy": "Admin"
+      "createdBy": "Admin",
+      "status": "under development"
     },
     {
       "title": "Biology",
@@ -37,7 +51,8 @@
       "grades": [9, 10, 11, 12],
       "isActive": true,
       "subject": "biology",
-      "createdBy": "Admin"
+      "createdBy": "Admin",
+      "status": "under development"
     },
     {
       "title": "Chemistry",
@@ -47,7 +62,8 @@
       "grades": [9, 10, 11, 12],
       "isActive": true,
       "subject": "chemistry",
-      "createdBy": "Admin"
+      "createdBy": "Admin",
+      "status": "under development"
     },
     {
       "title": "Geography",
@@ -57,7 +73,8 @@
       "grades": [6, 7, 8, 9, 10],
       "isActive": true,
       "subject": "geography",
-      "createdBy": "Admin"
+      "createdBy": "Admin",
+      "status": "under development"
     },
     {
       "title": "Computer Science",
@@ -67,17 +84,8 @@
       "grades": [8, 9, 10, 11, 12],
       "isActive": true,
       "subject": "cs",
-      "createdBy": "Admin"
-    },
-    {
-      "title": "English",
-      "description": "Analyze literary works and improve your understanding of prose and poetry.",
-      "imageLink": "/literature-bot.jpg",
-      "link": "https://example.com/bots/literature",
-      "grades": [6, 7, 8, 9, 11, 12],
-      "isActive": true,
-      "subject": "english",
-      "createdBy": "Admin"
+      "createdBy": "Admin",
+      "status": "under development"
     },
     {
       "title": "Economics",
@@ -87,7 +95,8 @@
       "grades": [11, 12],
       "isActive": true,
       "subject": "economics",
-      "createdBy": "Admin"
+      "createdBy": "Admin",
+      "status": "under development"
     }
   ]
   

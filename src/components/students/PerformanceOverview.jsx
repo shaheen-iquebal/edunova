@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -9,287 +10,226 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  LineChart,
-  Line,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
-import { TrendingUp, TrendingDown, ArrowRight } from "lucide-react";
+  BookOpen,
+  Target,
+  TrendingUp,
+  Focus,
+  ArrowRight,
+  Star,
+} from "lucide-react";
 
-const PerformanceOverview = () => {
-  const trendData = [
-    { month: "Jan", real: 75, predicted: 78 },
-    { month: "Feb", real: 82, predicted: 80 },
-    { month: "Mar", real: 78, predicted: 82 },
-    { month: "Apr", real: 85, predicted: 83 },
-    { month: "May", real: 82, predicted: 85 },
-    { month: "Jun", real: 88, predicted: 86 },
-    { month: "Jul", real: 80, predicted: 81 },
-    { month: "Aug", real: 79, predicted: 76 },
-  ];
+const PerformanceInsights = () => {
+  const navigate = useNavigate(); // Initialize the navigation function
+  const [selectedInsight, setSelectedInsight] = useState(null);
 
-  const performanceData = [
+  const strengths = [
     {
-      subject: "Mathematics",
-      realPerformance: 85,
-      predictedPerformance: 88,
-      trend: "up",
-    },
-    {
-      subject: "Physics",
-      realPerformance: 72,
-      predictedPerformance: 75,
-      trend: "down",
-    },
-    {
-      subject: "Chemistry",
-      realPerformance: 78,
-      predictedPerformance: 80,
-      trend: "up",
-    },
-    {
-      subject: "English",
-      realPerformance: 90,
-      predictedPerformance: 92,
-      trend: "up",
-    },
-    {
+      id: "cs_advanced",
       subject: "Computer Science",
-      realPerformance: 95,
-      predictedPerformance: 94,
-      trend: "up",
+      topic: "Advanced Programming",
+      score: 98,
+      icon: <BookOpen className="text-blue-600 h-6 w-6" />,
+      actionItems: [
+        "Explore advanced coding challenges",
+        "Consider competitive programming",
+        "Develop a complex software project",
+      ],
+    },
+    {
+      id: "math_calculus",
+      subject: "Mathematics",
+      topic: "Calculus",
+      score: 88,
+      icon: <Target className="text-green-600 h-6 w-6" />,
+      actionItems: [
+        "Dive into advanced calculus topics",
+        "Participate in math olympiads",
+        "Learn application of calculus in real-world scenarios",
+      ],
+    },
+    {
+      id: "english_literature",
+      subject: "English",
+      topic: "Literature Analysis",
+      score: 92,
+      icon: <Star className="text-purple-600 h-6 w-6" />,
+      actionItems: [
+        "Explore advanced literary criticism",
+        "Start a literature blog",
+        "Participate in writing workshops",
+      ],
     },
   ];
 
-  const getPerformanceColor = (score) => {
-    if (score >= 80) return "bg-green-100 text-green-800";
-    if (score >= 70) return "bg-yellow-100 text-yellow-800";
-    return "bg-red-100 text-red-800";
-  };
+  const weaknesses = [
+    {
+      id: "physics_mechanics",
+      subject: "Physics",
+      topic: "Mechanics",
+      score: 65,
+      icon: <Focus className="text-red-600 h-6 w-6" />,
+      actionItems: [
+        "Focused study on fundamental mechanics principles",
+        "Practice problem-solving with step-by-step approach",
+        "Seek additional tutoring or online resources",
+      ],
+    },
+    {
+      id: "chemistry_organic",
+      subject: "Chemistry",
+      topic: "Organic Chemistry",
+      score: 72,
+      icon: <TrendingUp className="text-orange-600 h-6 w-6" />,
+      actionItems: [
+        "Break down complex organic chemistry concepts",
+        "Use visualization techniques for molecular structures",
+        "Create mind maps and summary notes",
+      ],
+    },
+  ];
 
-  const SubjectCard = ({ subject, realScore, predictedScore, trend }) => (
-    <Card className="mb-4">
-      <CardContent className="pt-4">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="font-semibold">{subject}</h3>
-          <div className="flex gap-2 items-center">
-            <Badge variant="outline" className={getPerformanceColor(realScore)}>
-              Real: {realScore}%
-            </Badge>
-            <Badge
-              variant="outline"
-              className={getPerformanceColor(predictedScore)}
-            >
-              Predicted: {predictedScore}%
-            </Badge>
-            {trend === "up" ? (
-              <TrendingUp className="h-4 w-4 text-green-500" />
-            ) : (
-              <TrendingDown className="h-4 w-4 text-red-500" />
-            )}
-          </div>
-        </div>
-        <div className="h-2 bg-gray-200 rounded-full">
-          <div
-            className="h-full rounded-full bg-blue-500"
-            style={{ width: `${realScore}%` }}
-          />
-        </div>
-      </CardContent>
-    </Card>
-  );
+  const handleInsightClick = (insight) => {
+    setSelectedInsight(insight);
+    // In a real app, you'd navigate to a detailed page
+    // console.log("Navigating to insight:", insight);
 
-  const handleStrengthsClick = () => {
-    // Navigate to strengths page
-    console.log("Navigate to strengths page");
+    setSelectedInsight(insight);
+
+    if (insight.id === "cs_advanced") {
+      navigate("/student/cs-detailed-insights");
+      // window.scrollTo(0, 0);
+    } else if (insight.id === "math_calculus") {
+      navigate("/student/maths-detailed-insights");
+    } else if (insight.id === "english_literature") {
+      navigate("/student/literature-detailed-insights");
+    } else if (insight.id === "physics_mechanics") {
+      navigate("/student/physics-detailed-insights");
+    } else if (insight.id === "chemistry_organic") {
+      navigate("/student/chemistry-detailed-insights");
+    } else {
+      console.log("No matching route for insight:", insight);
+    }
   };
 
   return (
-    <div className="w-full space-y-6">
-      {/* Performance Trends */}
-      <Card className="shadow-lg">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-6 bg-gray-50">
+      {/* Strengths and Weaknesses Column */}
+      <Card className="shadow-xl bg-white">
         <CardHeader>
-          <CardTitle>Performance Trends</CardTitle>
+          <CardTitle className="text-2xl font-bold text-gray-800">
+            Performance Landscape
+          </CardTitle>
           <CardDescription>
-            Track your real performance (RP) and predicted performance (PP) over
-            time
+            Comprehensive overview of academic strengths and areas for growth
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="h-[300px] w-full">
-            <ResponsiveContainer>
-              <LineChart data={trendData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="month" />
-                <YAxis domain={[0, 100]} />
-                <Tooltip />
-                <Legend />
-                <Line
-                  type="monotone"
-                  dataKey="real"
-                  name="Real Performance"
-                  stroke="#22c55e"
-                  strokeWidth={2}
-                  dot={{ r: 4 }}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="predicted"
-                  name="Predicted Performance"
-                  stroke="#3b82f6"
-                  strokeWidth={2}
-                  dot={{ r: 4 }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold text-green-700 mb-4 flex items-center">
+                <Star className="mr-2 text-green-600" /> Strengths
+              </h3>
+              {strengths.map((strength) => (
+                <div
+                  key={strength.id}
+                  className="flex items-center mb-4 p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors"
+                >
+                  {strength.icon}
+                  <div className="ml-4 flex-grow">
+                    <h4 className="font-semibold text-gray-800">
+                      {strength.subject} - {strength.topic}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Score: {strength.score}%
+                    </p>
+                  </div>
+                  <Badge
+                    variant="outline"
+                    className="bg-green-200 text-green-800"
+                  >
+                    Top Performer
+                  </Badge>
+                </div>
+              ))}
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-red-700 mb-4 flex items-center">
+                <Focus className="mr-2 text-red-600" /> Areas for Improvement
+              </h3>
+              {weaknesses.map((weakness) => (
+                <div
+                  key={weakness.id}
+                  className="flex items-center mb-4 p-3 bg-red-50 rounded-lg hover:bg-red-100 transition-colors"
+                >
+                  {weakness.icon}
+                  <div className="ml-4 flex-grow">
+                    <h4 className="font-semibold text-gray-800">
+                      {weakness.subject} - {weakness.topic}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Score: {weakness.score}%
+                    </p>
+                  </div>
+                  <Badge variant="outline" className="bg-red-200 text-red-800">
+                    Need Focus
+                  </Badge>
+                </div>
+              ))}
+            </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* Two Column Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Subject Overview */}
-        <Card className="shadow-lg">
-          <CardHeader>
-            <CardTitle>Subject Overview</CardTitle>
-            <CardDescription>
-              Current performance across all subjects
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="h-[300px]">
-              <ResponsiveContainer>
-                <BarChart data={performanceData} barGap={0}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="subject" />
-                  <YAxis domain={[0, 100]} />
-                  <Tooltip />
-                  <Legend />
-                  <Bar
-                    dataKey="realPerformance"
-                    name="Real Performance"
-                    fill="#22c55e"
-                    radius={[4, 4, 0, 0]}
-                  />
-                  <Bar
-                    dataKey="predictedPerformance"
-                    name="Predicted Performance"
-                    fill="#3b82f6"
-                    radius={[4, 4, 0, 0]}
-                  />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Subject Breakdown */}
-        <Card className="shadow-lg">
-          <CardHeader>
-            <CardTitle>Subject Breakdown</CardTitle>
-            <CardDescription>Detailed performance by subject</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2">
-              {performanceData.map((data, index) => (
-                <SubjectCard
-                  key={index}
-                  subject={data.subject}
-                  realScore={data.realPerformance}
-                  predictedScore={data.predictedPerformance}
-                  trend={data.trend}
-                />
+      {/* Actionable Insights Column */}
+      <Card className="shadow-xl bg-white">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-gray-800">
+            Personalized Learning Roadmap
+          </CardTitle>
+          <CardDescription>
+            Tailored recommendations to accelerate your academic growth
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold text-blue-700 mb-4">
+                Recommended Actions
+              </h3>
+              {[...strengths, ...weaknesses].map((insight) => (
+                <div
+                  key={insight.id}
+                  className="mb-4 p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer"
+                  onClick={() => handleInsightClick(insight)}
+                >
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h4 className="font-semibold text-gray-800">
+                        {insight.subject} - {insight.topic}
+                      </h4>
+                      <ul className="list-disc list-inside text-sm text-gray-600 mt-2">
+                        {insight.actionItems.slice(0, 2).map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="ml-4 bg-emerald-600 text-white"
+                      onClick={() => handleInsightClick(insight)}
+                    >
+                      Detailed Insights <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
-
-        {/* Performance Insights */}
-        <Card className="shadow-lg">
-          <CardHeader>
-            <CardTitle>Performance Insights</CardTitle>
-            <CardDescription>
-              Key observations about your academic progress
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-start gap-2">
-                <Badge variant="default" className="bg-green-500">
-                  Strength
-                </Badge>
-                <p className="text-sm">
-                  Exceptional performance in Computer Science (95%) and English
-                  (90%)
-                </p>
-              </div>
-              <div className="flex items-start gap-2">
-                <Badge variant="default" className="bg-yellow-500">
-                  Improvement
-                </Badge>
-                <p className="text-sm">
-                  Chemistry shows steady improvement with current score of 78%
-                </p>
-              </div>
-              <div className="flex items-start gap-2">
-                <Badge variant="default" className="bg-red-500">
-                  Action Needed
-                </Badge>
-                <p className="text-sm">
-                  Physics requires attention - currently 3% below predicted
-                  performance
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Strengths and Weaknesses Summary */}
-        <Card className="shadow-lg">
-          <CardHeader>
-            <CardTitle>Quick Strength Analysis</CardTitle>
-            <CardDescription>
-              Overview of your academic strong points and areas needing
-              attention
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-green-600 mb-2">
-                  Top Performing Areas
-                </h4>
-                <ul className="list-disc pl-4 space-y-1">
-                  <li>Advanced Programming Concepts (98%)</li>
-                  <li>Literature Analysis (92%)</li>
-                  <li>Calculus (88%)</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-red-600 mb-2">
-                  Areas for Improvement
-                </h4>
-                <ul className="list-disc pl-4 space-y-1">
-                  <li>Physics Mechanics (65%)</li>
-                  <li>Organic Chemistry (72%)</li>
-                </ul>
-              </div>
-              <Button onClick={handleStrengthsClick} className="w-full mt-4">
-                View Detailed Strengths and Weaknesses
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };
 
-export default PerformanceOverview;
+export default PerformanceInsights;

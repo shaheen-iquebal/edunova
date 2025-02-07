@@ -36,7 +36,7 @@ function ChatSideBar({ bots, activeBot, onBotSwitch, home }) {
   };
 
   return (
-    <div className="w-1/6 bsg-[#171717] text-black p-4 flex flex-col justify-between borsder-2">
+    <div className="w-1/6 bg-[#171717] text-white p-4 flex flex-col justify-between">
       <div>
         <h2 className="text-lg font-bold mb-4 px-2">Subjects</h2>
         <ul>
@@ -45,9 +45,7 @@ function ChatSideBar({ bots, activeBot, onBotSwitch, home }) {
               key={bot.title}
               onClick={() => onBotSwitch(bot.title, bot.subject)}
               className={`p-2 cursor-pointer rounded ${
-                activeBot === bot.title
-                  ? "bg-gray-700 text-white"
-                  : "hover:bg-gray-800 hover:text-white"
+                activeBot === bot.title ? "bg-gray-700" : "hover:bg-gray-800"
               }`}
             >
               {bot.title}
@@ -57,7 +55,7 @@ function ChatSideBar({ bots, activeBot, onBotSwitch, home }) {
       </div>
 
       {/* Bottom section */}
-      {/* <div className="mt-4 border-t border-gray-700 pt-4">
+      <div className="mt-4 border-t border-gray-700 pt-4">
         <div className="flex flex-col space-y-2">
           <div className="flex items-center space-x-2 py-2">
             <img
@@ -81,7 +79,7 @@ function ChatSideBar({ bots, activeBot, onBotSwitch, home }) {
             </a>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

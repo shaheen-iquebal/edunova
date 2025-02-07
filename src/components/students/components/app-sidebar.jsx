@@ -7,12 +7,15 @@ import {
   Home,
   ChartArea,
   BookText,
-  ListTodo,
-  Calculator,
-  AlarmClock,
-  Wand2,
+  // ListTodo,
+  // Calculator,
+  // AlarmClock,
+  // Wand2,
+  NotebookPen,
   MessageCircleQuestion,
   CalendarDays,
+  BookmarkCheck,
+  LibraryBig,
 } from "lucide-react";
 
 import { NavMain } from "./nav-main";
@@ -173,7 +176,7 @@ export function AppSidebar({ ...props }) {
   }, []);
 
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar collapsible="icon" {...props} className="text-lg">
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
@@ -182,7 +185,7 @@ export function AppSidebar({ ...props }) {
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton asChild tooltip="Dashboard">
                   <Link to="/student">
                     <Home />
                     <span>Dashboard</span>
@@ -192,14 +195,22 @@ export function AppSidebar({ ...props }) {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        <NavMain items={data.navMain} />
+        {/* <NavMain items={data.navMain} /> */}
         {/* <NavProjects projects={data.projects} /> */}
         <StaticItems />
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton asChild tooltip="Assignments">
+                  <Link to="/student/assignments">
+                    <NotebookPen />
+                    <span>Assignments</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild tooltip="Academic Calendar">
                   <Link to="/student/academic-calendar">
                     <CalendarDays />
                     <span>Academic Calendar</span>
@@ -207,7 +218,23 @@ export function AppSidebar({ ...props }) {
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton asChild tooltip="Books Library">
+                  <Link to="/student/books">
+                    <LibraryBig />
+                    <span>Books Library</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild tooltip="Bookmarked AI Responses">
+                  <Link to="/student/bookmarked-responses">
+                    <BookmarkCheck />
+                    <span>Bookmarked AI Responses</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild tooltip="Support Desk">
                   <Link to="/student/support">
                     <MessageCircleQuestion />
                     <span>Support Desk</span>

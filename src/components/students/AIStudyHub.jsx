@@ -280,7 +280,16 @@ const AIStudyHub = () => {
           >
             <div className="flex items-center gap-3 mb-2">
               <div className="text-blue-600">{feature.icon}</div>
-              <h2 className="font-semibold text-gray-800">{feature.title}</h2>
+              <h2 className="font-semibold text-gray-800">
+                {feature.title}
+                {["Voice Notes", "Smart Scribble", "Auto Flashcards"].includes(
+                  feature.title
+                ) ? null : (
+                  <span className="text-orange-600">
+                    &nbsp;(Under Development)
+                  </span>
+                )}
+              </h2>
             </div>
             <p className="text-sm text-gray-600 mb-2">{feature.description}</p>
             <p className="text-xs text-gray-500 italic">{feature.demo}</p>

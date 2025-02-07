@@ -43,7 +43,7 @@ function FeedbackButtons({ messageId }) {
       <div className="relative">
         <TbCopy
           onClick={handleCopy}
-          className="text-gray-400 hover:text-gray-500 cursor-pointer"
+          className="text-gray-400 hover:text-blue-500 cursor-pointer"
           style={{ fontSize: "15px", marginRight: "4" }}
           title={copied ? "Copied!" : "Copy"}
         />
@@ -54,11 +54,11 @@ function FeedbackButtons({ messageId }) {
         )}
       </div>
       <LiaThumbsUp
-        className="text-gray-400 hover:text-gray-500 cursor-pointer"
+        className="text-gray-400 hover:text-green-500 cursor-pointer"
         title="Good response"
       />
       <LiaThumbsDown
-        className="text-gray-400 hover:text-gray-500 cursor-pointer"
+        className="text-gray-400 hover:text-red-500 cursor-pointer"
         title="Bad response"
       />
       <HiOutlineRefresh

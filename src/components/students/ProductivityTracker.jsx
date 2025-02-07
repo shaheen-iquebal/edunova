@@ -80,46 +80,6 @@ const ProductivityTracker = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      {/* Academic Progress Card */}
-      <Card className="lg:col-span-2 shadow-lg">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <CalendarDays className="h-5 w-5" />
-            Academic Year Progress
-          </CardTitle>
-          <CardDescription>
-            {academicProgress.currentTerm} ({academicProgress.startDate} -{" "}
-            {academicProgress.endDate})
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            <div>
-              <div className="flex justify-between mb-2 text-sm">
-                <span className="font-medium">Academic Year Completion</span>
-                <span className="text-muted-foreground">
-                  {academicProgress.completedPercentage}%
-                </span>
-              </div>
-              <Progress
-                value={academicProgress.completedPercentage}
-                className="h-2"
-              />
-            </div>
-            <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-muted-foreground" />
-                <span>{academicProgress.daysRemaining} days remaining</span>
-              </div>
-              <Badge variant="outline" className="bg-blue-50 text-blue-700">
-                {Math.round((academicProgress.daysRemaining / 180) * 100)}% of
-                year remaining
-              </Badge>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
       {/* Upcoming Assignments Card */}
       <Card className="shadow-lg">
         <CardHeader>
@@ -196,6 +156,46 @@ const ProductivityTracker = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Academic Progress Card */}
+      <Card className="lg:col-span-2 shadow-lg">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <CalendarDays className="h-5 w-5" />
+            Academic Year Progress
+          </CardTitle>
+          <CardDescription>
+            {academicProgress.currentTerm} ({academicProgress.startDate} -{" "}
+            {academicProgress.endDate})
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            <div>
+              <div className="flex justify-between mb-2 text-sm">
+                <span className="font-medium">Academic Year Completion</span>
+                <span className="text-muted-foreground">
+                  {academicProgress.completedPercentage}%
+                </span>
+              </div>
+              <Progress
+                value={academicProgress.completedPercentage}
+                className="h-2"
+              />
+            </div>
+            <div className="flex items-center justify-between text-sm">
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-muted-foreground" />
+                <span>{academicProgress.daysRemaining} days remaining</span>
+              </div>
+              <Badge variant="outline" className="bg-blue-50 text-blue-700">
+                {Math.round((academicProgress.daysRemaining / 180) * 100)}% of
+                year remaining
+              </Badge>
+            </div>
           </div>
         </CardContent>
       </Card>
